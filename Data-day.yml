@@ -1,41 +1,39 @@
 -
-  date: 0101
+  date: '01-01'
   name: Jour de l'an
   url: http://fr.wikipedia.org/wiki/Jour_de_l%27an
 
 -
-  date: 0105
+  date: '05-01'
   name: Fête du travail
   url: http://fr.wikipedia.org/wiki/F%C3%AAte_du_Travail
 
 -
-  date: 0805
+  date: '05-08'
   name: Fin de la 2nd guerre mondiale
   url: http://fr.wikipedia.org/wiki/Seconde_Guerre_mondiale
 
 -
-  date: 1407
+  date: '07-14'
   name: Fête nationale
   url: http://fr.wikipedia.org/wiki/F%C3%AAte_nationale_fran%C3%A7aise
 
 -
-  date: 1508
+  date: '08-15'
   name: Assomption
   url: http://fr.wikipedia.org/wiki/Assomption_de_Marie
 
 -
-  date: 0111
+  date: '11-01'
   name: La Toussaint
   url: http://fr.wikipedia.org/wiki/Toussaint
 
 -
-  date: 1111
+  date: '11-11'
   name: Armistice
   url: http://fr.wikipedia.org/wiki/Armistice_de_1918
 
 -
-  date: 2512
+  date: '12-25'
   name: Noël
   url: http://fr.wikipedia.org/wiki/No%C3%ABl
-
--
