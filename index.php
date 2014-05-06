@@ -3,7 +3,6 @@
 require_once "spyc-master/spyc.php";
 $Data = Spyc::YAMLLoad('Data-day.yml');
 
-var_dump($Data);
 ?>
 <!DOCTYPE html>
 <html>
