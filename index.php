@@ -1,7 +1,7 @@
 <?php
 
 require_once "spyc-master/spyc.php";
-$Data = Spyc::YAMLLoad('test.yml');
+$Data = Spyc::YAMLLoad('Data-day.yml');
 
 var_dump($Data);
 ?>
