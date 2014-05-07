@@ -21,25 +21,36 @@ require_once "Data.php";
 
 // Get the current day
     $CurrentDate = date("Y-m-d");
-    $CurrentDate = strtotime($CurrentDate);
+    $CurrentDate_str = strtotime($CurrentDate);
 
+// The next weekend day
+    $IsWeekend = date("w", strtotime($CurrentDate));
+    while($IsWeekend != 0 && $IsWeekend != 6){
+        $IsWeekend++;
+    }
+    $tmp = $IsWeekend - date("w");
+    $NextWeekend = date("Y-m-d", strtotime('+'.$tmp.'days'));
+    $NextWeekend_str = strtotime(date("Y-m-d", strtotime('+'.$tmp.'days')));
+
+// Is there a day off before weekend ?
     $i = 0;
 
-    // Listage et comparatif des dates
-        foreach ($Data as $Day) {
+    foreach ($Data as $Day) {
 
-        // Formatter les dates contenues dans le YML
-            $Dayoff = date("Y-").$Data[$i]['date'];
-            $Dayoff_DateTime = strtotime($Dayoff);
+    // Get the YML date and compare with current day
+        $Dayoff = date("Y-").$Data[$i]['date'];
+        $Dayoff_DateTime = strtotime($Dayoff);
 
-            if($CurrentDate < $Dayoff_DateTime){
-                echo "Prochaine date : ".$Dayoff."<br />";
-                echo "<b>".$Data[$i]['name']."</b>";
-                break;
-            }
-
-            $i++;
+        if($Dayoff_DateTime > $CurrentDate_str && $Dayoff_DateTime < $NextWeekend_str){
+            $Nextdayoff = "Prochaine date : ".$Dayoff."<br />";
+            $Nextdayoff .= "<b>".$Data[$i]['name']."</b>";
+            break;
         }
+
+        $i++;
+    }
+
+    echo $Nextdayoff;
 
 
     ?>
