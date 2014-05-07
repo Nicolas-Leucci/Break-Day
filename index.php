@@ -1,12 +1,9 @@
 <?php
 
 // Initialize Spyc et YAML
-    require_once "spyc-master/spyc.php";
-    $Data = Spyc::YAMLLoad('Data-day.yml');
+require_once "spyc-master/spyc.php";
+require_once "Data.php";
 
-// Get the current day
-    $CurrentDate = date("Y-m-d");
-    $CurrentDate = strtotime($CurrentDate);
 ?>
 <!DOCTYPE html>
 <html>
@@ -22,22 +19,27 @@
 
     <?php
 
+// Get the current day
+    $CurrentDate = date("Y-m-d");
+    $CurrentDate = strtotime($CurrentDate);
+
     $i = 0;
-    foreach ($Data as $Day) {
 
-    $Dayoff = date("Y-").$Data[$i]['date'];
-    $Dayoff_DateTime = strtotime($Dayoff);
+    // Listage et comparatif des dates
+        foreach ($Data as $Day) {
 
-        if($CurrentDate < $Dayoff_DateTime){
-            echo "<font color=\"green\">".$Dayoff."</font><br />";
+        // Formatter les dates contenues dans le YML
+            $Dayoff = date("Y-").$Data[$i]['date'];
+            $Dayoff_DateTime = strtotime($Dayoff);
 
+            if($CurrentDate < $Dayoff_DateTime){
+                echo "Prochaine date : ".$Dayoff."<br />";
+                echo "<b>".$Data[$i]['name']."</b>";
+                break;
+            }
+
+            $i++;
         }
-        else{
-            echo "<font color=\"red\">".$Dayoff."</font><br />";
-        }
-
-        $i++;
-    }
 
 
     ?>
