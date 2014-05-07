@@ -8,7 +8,7 @@ require_once "Data.php";
 <!DOCTYPE html>
 <html>
 <head>
-<title>DayOff - When is my next break ?</title>
+<title>NextBreak - When is my next break ?</title>
 <meta charset="utf-8" />
 <meta name="author" content="LEUCCI Nicolas" />
 <link rel="stylesheet" href="css/main.css" />
@@ -42,7 +42,7 @@ require_once "Data.php";
         $Dayoff_DateTime = strtotime($Dayoff);
 
         if($Dayoff_DateTime > $CurrentDate_str && $Dayoff_DateTime < $NextWeekend_str){
-            $Nextdayoff = "Prochaine date : ".$Dayoff."<br />";
+            $Nextdayoff = "The next day off is: ".$Dayoff."<br />";
             $Nextdayoff .= "<b>".$Data[$i]['name']."</b>";
             break;
         }
