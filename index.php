@@ -1,8 +1,10 @@
 <?php
+setlocale(LC_TIME, 'fr_FR');
 
 // Initialize Spyc et YAML
 require_once "spyc-master/spyc.php";
 require_once "Data.php";
+require_once "french.php";
 
 // Get the current day
     $CurrentDate = date("Y-m-d");
@@ -14,11 +16,12 @@ require_once "Data.php";
         $IsWeekend++;
     }
     $tmp = $IsWeekend - date("w");
-    $NextWeekend = date("Y-m-d", strtotime('+'.$tmp.'days'));
+
+    $NextWeekend_design =  date("l j F Y", strtotime('+'.$tmp.'days'));
     $NextWeekend_str = strtotime(date("Y-m-d", strtotime('+'.$tmp.'days')));
 
 // Next weekend by default
-    $Nextdayoff = "<p class=\"nextday\">".$NextWeekend."</p>";
+    $Nextdayoff = "<p class=\"nextday\">".date_fr($NextWeekend_design)."</p>";
     $Nextdayoff .= "<p class=\"dayname\">Weekend !</p>";
 
 // Is there a day off before weekend ?
@@ -29,10 +32,11 @@ require_once "Data.php";
     // Get the YML date and compare with current day
         $Dayoff = date("Y-").$Data[$i]['date'];
         $Dayoff_DateTime = strtotime($Dayoff);
+        $Dayoff_design = date("l j F Y", $Dayoff_DateTime);
 
         if($Dayoff_DateTime > $CurrentDate_str && $Dayoff_DateTime < $NextWeekend_str){
-            $Nextdayoff = $Dayoff."<br />";
-            $Nextdayoff .= "<b>".$Data[$i]['name']."</b>";
+            $Nextdayoff = "<p class=\"nextday\">".date_fr($Dayoff)."</p>";
+            $Nextdayoff .= "<p class=\"dayname\">".$Data[$i]['name']."</p>";
             break;
         }
 
