@@ -72,6 +72,16 @@ require_once "french.php";
         </div>
 
     </div>
+
+    <div id="time">
+
+        Nous sommes le
+        <br /><br /><b>
+        <?php
+            echo date_fr(date("l j F Y", time()))
+        ?></b>
+
+    </div>
 	<script type="text/javascript" src="js/jquery/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="js/jquery/jquery.backstretch.min.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>

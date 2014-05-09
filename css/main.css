@@ -47,5 +47,16 @@ body{
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 2.1px;
-    color: #000
+    color: #2980b9;
+    opacity: 1
+}
+
+#time{
+    float: left;
+    margin: 20px;
+    font-family: "Arial Black", "Arial Bold", Gadget, sans-serif;
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 2.1px;
+    color: #fff
 }
