@@ -1,0 +1,30 @@
+body{
+    overflow: hidden
+}
+
+.outback{
+    display: inline-block;
+    top: 0;
+    position: absolute;
+    height: 100%;
+    width: 100%
+}
+
+.innerback{
+    display: inline-block;
+    top: 50%;
+    position: relative;
+    vertical-align: middle
+}
+
+.content{
+    margin-left: auto;
+    margin-right: auto;
+    width: 500px;
+    height: 200px;
+    background-color: white;
+    opacity: .9;
+    display: inline-block;
+    top: -50%;
+    position: relative;
+}
