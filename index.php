@@ -21,8 +21,8 @@ require_once "french.php";
     $NextWeekend_str = strtotime(date("Y-m-d", strtotime('+'.$tmp.'days')));
 
 // Next weekend by default
-    $Nextdayoff_Date = "<p class=\"nextday\">".date_fr($NextWeekend_design)."</p>";
-    $Nextdayoff_Name = "<p class=\"dayname\">Weekend</p>";
+    $Nextdayoff_Date = "<p class=\"nextday text\">".date_fr($NextWeekend_design)."</p>";
+    $Nextdayoff_Name = "<p class=\"dayname text\">Weekend</p>";
 
 // Is there a day off before weekend ?
     $i = 0;
@@ -32,11 +32,11 @@ require_once "french.php";
     // Get the YML date and compare with current day
         $Dayoff = date("Y-").$Data[$i]['date'];
         $Dayoff_DateTime = strtotime($Dayoff);
-        $Dayoff_design = date("l j F Y", $Dayoff_DateTime);
+        $Dayoff_design = date("l j F", $Dayoff_DateTime);
 
         if($Dayoff_DateTime > $CurrentDate_str && $Dayoff_DateTime < $NextWeekend_str){
-            $Nextdayoff_Date = "<p class=\"nextday\">".date_fr($Dayoff)."</p>";
-            $Nextdayoff_Name = "<p class=\"dayname\">".$Data[$i]['name']."</p>";
+            $Nextdayoff_Date = "<p class=\"nextday text\">".date_fr($Dayoff)."</p>";
+            $Nextdayoff_Name = "<a href=\"".$Data[$i]['url']."\"><p class=\"dayname text\">".$Data[$i]['name']."</p></a>";
             break;
         }
 
@@ -56,6 +56,16 @@ require_once "french.php";
 <link rel="icon" type="image/png" href="img/favicon.ico" />
 </head>
 	<body>
+
+
+    <div class="header text">
+
+        <b>Break-Day</b><br /><br />
+        @<a href="http://nicolasleucci.fr">Nicolas Leucci</a>
+
+
+    </div>
+
     <div class="outback">
 
         <div class="innerback">
@@ -64,12 +74,12 @@ require_once "french.php";
 
                 <p class="date">
 
-                    <p class="title">Reposons nous le:</p>
+                    <p class="title text">Reposons nous ce:</p>
                     <?php
                         echo $Nextdayoff_Date;
                     ?>
 
-                    <p class="title">Car c'est:</p>
+                    <p class="title text">Car c'est:</p>
                     <?php
                         echo $Nextdayoff_Name;
                     ?>
@@ -80,7 +90,7 @@ require_once "french.php";
 
     </div>
 
-    <div id="time">
+    <div class="time text">
 
         Nous sommes le
         <br /><br /><b>
@@ -89,6 +99,8 @@ require_once "french.php";
         ?></b>
 
     </div>
+
+
 	<script type="text/javascript" src="js/jquery/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="js/jquery/jquery.backstretch.min.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>

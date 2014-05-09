@@ -6,7 +6,8 @@ body{
     display: table;
     position: absolute;
     height: 100%;
-    width: 100%
+    width: 100%;
+    z-index: -1
 }
 
 .innerback{
@@ -40,33 +41,42 @@ body{
       line-height: normal
 }
 
-.nextday, .dayname{
+.text{
     font-family: "Arial Black", "Arial Bold", Gadget, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2.1px;
+}
+
+.nextday, .dayname{
     font-size: 30px;
     padding: 5;
     font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 2.1px;
     color: #2980b9;
     opacity: 1
 }
 
-#time{
+.time{
     float: left;
     margin: 20px;
-    font-family: "Arial Black", "Arial Bold", Gadget, sans-serif;
     font-size: 15px;
-    text-transform: uppercase;
-    letter-spacing: 2.1px;
+    color: #fff
+}
+
+.header{
+    float: right;
+    margin: 20px;
+    color: #fff;
+    text-align: right
+}
+
+.header a{
+    text-decoration: none;
     color: #fff
 }
 
 .title{
     margin: 20px;
-    font-family: "Arial Black", "Arial Bold", Gadget, sans-serif;
     font-size: 15px;
-    text-transform: uppercase;
-    letter-spacing: 2.1px;
     font-weight: bold;
     color: #95a5a6;
     text-align: left
