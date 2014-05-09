@@ -1,6 +1,5 @@
 <?php
-setlocale(LC_TIME, 'fr_FR');
-
+error_reporting(E_ALL);
 // Initialize Spyc et YAML
 require_once "spyc-master/spyc.php";
 require_once "Data.php";
