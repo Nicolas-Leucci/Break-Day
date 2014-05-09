@@ -22,7 +22,7 @@ require_once "french.php";
 
 // Next weekend by default
     $Nextdayoff = "<p class=\"nextday\">".date_fr($NextWeekend_design)."</p>";
-    $Nextdayoff .= "<p class=\"dayname\">Weekend !</p>";
+    $Nextdayoff .= "<p class=\"dayname\">Weekend</p>";
 
 // Is there a day off before weekend ?
     $i = 0;
@@ -47,7 +47,7 @@ require_once "french.php";
 <!DOCTYPE html>
 <html>
 <head>
-<title>Break-Day - When is my next break ?</title>
+<title>Break-Day</title>
 <meta charset="utf-8" />
 <meta name="author" content="LEUCCI Nicolas" />
 <link rel="stylesheet" href="css/main.css" />
