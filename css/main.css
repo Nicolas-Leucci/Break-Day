@@ -18,13 +18,13 @@ body{
     margin-left: auto;
     margin-right: auto;
     width: 500px;
-    height: 230px;
+    height: 290px;
 
     padding: 20px;
     text-align: center;
 
     background-color: #fff;
-    opacity: .8;
+    opacity: .9;
 
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
@@ -59,4 +59,15 @@ body{
     text-transform: uppercase;
     letter-spacing: 2.1px;
     color: #fff
+}
+
+.title{
+    margin: 20px;
+    font-family: "Arial Black", "Arial Bold", Gadget, sans-serif;
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 2.1px;
+    font-weight: bold;
+    color: #95a5a6;
+    text-align: left
 }

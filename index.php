@@ -21,8 +21,8 @@ require_once "french.php";
     $NextWeekend_str = strtotime(date("Y-m-d", strtotime('+'.$tmp.'days')));
 
 // Next weekend by default
-    $Nextdayoff = "<p class=\"nextday\">".date_fr($NextWeekend_design)."</p>";
-    $Nextdayoff .= "<p class=\"dayname\">Weekend</p>";
+    $Nextdayoff_Date = "<p class=\"nextday\">".date_fr($NextWeekend_design)."</p>";
+    $Nextdayoff_Name = "<p class=\"dayname\">Weekend</p>";
 
 // Is there a day off before weekend ?
     $i = 0;
@@ -35,8 +35,8 @@ require_once "french.php";
         $Dayoff_design = date("l j F Y", $Dayoff_DateTime);
 
         if($Dayoff_DateTime > $CurrentDate_str && $Dayoff_DateTime < $NextWeekend_str){
-            $Nextdayoff = "<p class=\"nextday\">".date_fr($Dayoff)."</p>";
-            $Nextdayoff .= "<p class=\"dayname\">".$Data[$i]['name']."</p>";
+            $Nextdayoff_Date = "<p class=\"nextday\">".date_fr($Dayoff)."</p>";
+            $Nextdayoff_Name = "<p class=\"dayname\">".$Data[$i]['name']."</p>";
             break;
         }
 
@@ -63,9 +63,16 @@ require_once "french.php";
             <div class="content">
 
                 <p class="date">
-                <?php
-                    echo $Nextdayoff;
-                ?>
+
+                    <p class="title">Reposons nous le:</p>
+                    <?php
+                        echo $Nextdayoff_Date;
+                    ?>
+
+                    <p class="title">Car c'est:</p>
+                    <?php
+                        echo $Nextdayoff_Name;
+                    ?>
                 </p>
             </div>
 
