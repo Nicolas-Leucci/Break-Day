@@ -8,7 +8,7 @@ require_once "Data.php";
 <!DOCTYPE html>
 <html>
 <head>
-<title>NextBreak - When is my next break ?</title>
+<title>Break-Day - When is my next break ?</title>
 <meta charset="utf-8" />
 <meta name="author" content="LEUCCI Nicolas" />
 <link rel="stylesheet" href="css/main.css" />
@@ -31,6 +31,10 @@ require_once "Data.php";
     $tmp = $IsWeekend - date("w");
     $NextWeekend = date("Y-m-d", strtotime('+'.$tmp.'days'));
     $NextWeekend_str = strtotime(date("Y-m-d", strtotime('+'.$tmp.'days')));
+
+// Next weekend by default
+    $Nextdayoff = "The next day off is: ".$NextWeekend."<br />";
+    $Nextdayoff .= "<b>Weekend !</b>";
 
 // Is there a day off before weekend ?
     $i = 0;
