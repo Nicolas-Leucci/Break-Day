@@ -17,7 +17,7 @@ require_once "french.php";
     }
     $tmp = $IsWeekend - date("w");
 
-    $NextWeekend_design =  date("l j F Y", strtotime('+'.$tmp.'days'));
+    $NextWeekend_design =  date("l j F", strtotime('+'.$tmp.'days'));
     $NextWeekend_str = strtotime(date("Y-m-d", strtotime('+'.$tmp.'days')));
 
 // Next weekend by default
@@ -35,7 +35,7 @@ require_once "french.php";
         $Dayoff_design = date("l j F", $Dayoff_DateTime);
 
         if($Dayoff_DateTime > $CurrentDate_str && $Dayoff_DateTime < $NextWeekend_str){
-            $Nextdayoff_Date = "<p class=\"nextday text\">".date_fr($Dayoff)."</p>";
+            $Nextdayoff_Date = "<p class=\"nextday text\">".date_fr($Dayoff_design)."</p>";
             $Nextdayoff_Name = "<a href=\"".$Data[$i]['url']."\"><p class=\"dayname text\">".$Data[$i]['name']."</p></a>";
             break;
         }
