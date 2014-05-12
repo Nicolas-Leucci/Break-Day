@@ -1,8 +1,8 @@
 <?php
-error_reporting(E_ALL);
+
 // Initialize Spyc et YAML
 require_once "spyc-master/spyc.php";
-require_once "Data.php";
+require_once "data.php";
 require_once "french.php";
 
 // Get the current day
@@ -49,6 +49,8 @@ require_once "french.php";
 <title>Break-Day</title>
 <meta charset="utf-8" />
 <meta name="author" content="LEUCCI Nicolas" />
+<meta name="description" content="Quel est le prochain jour de pause ?" />
+<meta name="keywords" content="nicolas, leucci, website, developper, internet, flat, design, nicolasleucci, break, day, dayoff, school, ecole, férié" />
 <link rel="stylesheet" href="css/main.css" />
 <!--[if lte IE 7]><link rel="stylesheet" href="css/ie7.css" /><![endif]-->
 <link rel="start" title="Accueil" href="index.php" />
